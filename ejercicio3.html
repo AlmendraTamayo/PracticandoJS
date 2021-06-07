@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h2>
+                Resultado: <span class="resultado"></span>
+            </h2>
+            <div>
+                <div>
+                    <div>
+                        <label for="">Valor 1</label>
+                        <input id="valor1" type="text">
+                    </div>
+                    <div>
+                        <label for="">Valor 2</label>
+                        <input id="valor2" type="text">
+                    </div>
+                    <div style="display: flex">
+                        <button id="btn-sumar" type="button">
+                            Sumar
+                        </button>
+                        <button id="btn-restar" type="button">
+                            Restar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+     const sumar = (n1,n2) => {
+        let suma = n1+n2
+        return suma
+     }
+     const restar = (n1,n2) => {
+        let resta = n1-n2
+        return resta
+     }
+     let botonSumar = document.getElementById("btn-sumar")
+     botonSumar.addEventListener("click",()=>{
+         let valor1Suma = +document.getElementById("valor1").value
+         let valor2Suma = +document.getElementById("valor2").value
+         document.querySelector(".resultado").innerHTML=`${sumar(valor1Suma,valor2Suma)}`
+     })
+
+     let botonRestar = document.getElementById("btn-restar")
+     botonRestar.addEventListener("click",()=>{
+         let valor1Resta = +document.getElementById("valor1").value
+         let valor2Resta = +document.getElementById("valor2").value
+            if(restar(valor1Resta,valor2Resta)<0){
+                document.querySelector(".resultado").innerHTML=`0`
+            }else{
+                document.querySelector(".resultado").innerHTML=`${restar(valor1Resta,valor2Resta)}`
+            }
+
+         
+     })
+
+    </script>
+</body>
+
+</html>
