@@ -77,14 +77,14 @@
 
         let validar = (nombre, asunto, mensaje) => {
             let validacionForm = true;
-            let validacionNombre = /^[a-zA-Z]+$/gim
+            let validacionNombre = /^[a-zA-Z ]+$/gim
 
             if (validacionNombre.test(nombre) == false) {
                 document.querySelector(".errorNombre").innerHTML = "Ingrese un nombre válido"
                 validacionForm = false
             }
 
-            let validacionAsuntoMensaje = /[a-zA-Z]/gim
+            let validacionAsuntoMensaje = /[a-zA-Z ]/gim
             if (validacionAsuntoMensaje.test(asunto) == false) {
                 document.querySelector(".errorAsunto").innerHTML = "Ingrese un asunto válido (recuerda usar letras)"
                 validacionForm = false
